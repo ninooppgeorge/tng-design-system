@@ -1,0 +1,15 @@
+:root {
+  --ui-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --ui-radius-md: 12px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+
+  --ui-primary: #2563eb;
+  --ui-primary-hover: #1d4ed8;
+  --ui-on-primary: #ffffff;
+
+  --ui-border: #e5e7eb;
+  --ui-text: #111827;
+  --ui-bg: #ffffff;
+}

@@ -1,0 +1,22 @@
+.button {
+  font-family: var(--ui-font);
+  border-radius: var(--ui-radius-md);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--ui-primary);
+  color: var(--ui-on-primary);
+}
+
+.primary:hover {
+  background: var(--ui-primary-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
