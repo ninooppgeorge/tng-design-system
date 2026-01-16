@@ -1,23 +1,59 @@
 {
-  "name": "tng-design-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@ninooppgeorge/tng-design-system",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Tng Design System - A React UI component library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninooppgeorge/tng-design-system.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+  "homepage": "https://github.com/ninooppgeorge/tng-design-system",
+  "bugs": {
+    "url": "https://github.com/ninooppgeorge/tng-design-system/issues"
+  },
+  "files": [
+    "dist",
+    "theme.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./theme.css": "./theme.css"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build": "npm run build:types && vite build",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
