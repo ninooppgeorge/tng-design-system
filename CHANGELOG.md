@@ -1,5 +1,11 @@
 # @ninoop/tng-design-system
 
+## 0.2.4
+
+### Patch Changes
+
+- 7529ed9: Fixed imports
+
 ## 0.2.3
 
 ### Patch Changes

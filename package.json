@@ -1,6 +1,6 @@
 {
   "name": "@ninoop/tng-design-system",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "type": "module",
   "description": "Tng Design System - A React UI component library",
