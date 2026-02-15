@@ -1,5 +1,11 @@
 # @ninoop/tng-design-system
 
+## 0.2.2
+
+### Patch Changes
+
+- 74337ed: Updated theme imports
+
 ## 0.2.1
 
 ### Patch Changes
