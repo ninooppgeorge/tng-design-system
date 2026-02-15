@@ -1,5 +1,11 @@
 # @ninoop/tng-design-system
 
+## 0.2.3
+
+### Patch Changes
+
+- d6aa03d: fixing imports
+
 ## 0.2.2
 
 ### Patch Changes
