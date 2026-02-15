@@ -306,3 +306,6 @@
 .tng-root *::after {
   box-sizing: border-box;
 }
+
+/* ── Component styles ── */
+@import './dist/tng-design-system.css';
