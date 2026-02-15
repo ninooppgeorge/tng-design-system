@@ -1,0 +1,85 @@
+/* ── Tab List ── */
+
+.list {
+  display: flex;
+  gap: var(--ui-space-1);
+  font-family: var(--ui-font);
+}
+
+.list-underline {
+  border-bottom: 1px solid var(--ui-border);
+  gap: 0;
+}
+
+.list-pills {
+  background: var(--ui-bg-muted);
+  border-radius: var(--ui-radius-md);
+  padding: var(--ui-space-1);
+}
+
+/* ── Tab Trigger ── */
+
+.trigger {
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--ui-text-muted);
+  transition: color var(--ui-duration-fast) var(--ui-ease),
+              background var(--ui-duration-fast) var(--ui-ease),
+              box-shadow var(--ui-duration-fast) var(--ui-ease);
+  white-space: nowrap;
+}
+
+.trigger:hover {
+  color: var(--ui-text);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--ui-primary);
+  outline-offset: -2px;
+  border-radius: var(--ui-radius-sm);
+}
+
+/* ── Underline variant ── */
+
+.trigger-underline {
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.trigger-underline.active {
+  color: var(--ui-primary-text);
+  border-bottom-color: var(--ui-primary);
+}
+
+/* ── Pills variant ── */
+
+.trigger-pills {
+  padding: var(--ui-space-1-5) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+}
+
+.trigger-pills.active {
+  background: var(--ui-bg-elevated);
+  color: var(--ui-text);
+  box-shadow: var(--ui-shadow-xs);
+}
+
+/* ── Tab Content ── */
+
+.content {
+  padding: var(--ui-space-4) 0;
+  font-family: var(--ui-font);
+  color: var(--ui-text);
+  font-size: var(--ui-font-sm);
+  animation: tab-enter var(--ui-duration-fast) var(--ui-ease);
+}
+
+@keyframes tab-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

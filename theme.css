@@ -1,19 +1,308 @@
+/* ─── TNG Design System – Design Tokens ─── */
+
 :root {
+  /* ── Typography ── */
   --ui-font: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ui-font-mono: ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+  --ui-font-xs: 0.75rem;
+  --ui-font-sm: 0.875rem;
+  --ui-font-md: 1rem;
+  --ui-font-lg: 1.125rem;
+  --ui-font-xl: 1.25rem;
+  --ui-font-2xl: 1.5rem;
+  --ui-leading-tight: 1.25;
+  --ui-leading-normal: 1.5;
 
-  --ui-radius-md: 12px;
+  /* ── Spacing scale ── */
+  --ui-space-0: 0px;
+  --ui-space-px: 1px;
+  --ui-space-0-5: 2px;
+  --ui-space-1: 4px;
+  --ui-space-1-5: 6px;
   --ui-space-2: 8px;
+  --ui-space-2-5: 10px;
   --ui-space-3: 12px;
+  --ui-space-3-5: 14px;
+  --ui-space-4: 16px;
+  --ui-space-5: 20px;
+  --ui-space-6: 24px;
+  --ui-space-7: 28px;
+  --ui-space-8: 32px;
+  --ui-space-9: 36px;
+  --ui-space-10: 40px;
+  --ui-space-12: 48px;
+  --ui-space-16: 64px;
 
+  /* ── Border Radius ── */
+  --ui-radius-none: 0px;
+  --ui-radius-sm: 4px;
+  --ui-radius-md: 8px;
+  --ui-radius-lg: 12px;
+  --ui-radius-xl: 16px;
+  --ui-radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --ui-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --ui-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --ui-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --ui-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+  /* ── Z-index scale ── */
+  --ui-z-dropdown: 50;
+  --ui-z-sticky: 100;
+  --ui-z-overlay: 200;
+  --ui-z-modal: 300;
+  --ui-z-tooltip: 400;
+
+  /* ── Transitions ── */
+  --ui-duration-fast: 100ms;
+  --ui-duration-normal: 200ms;
+  --ui-duration-slow: 300ms;
+  --ui-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ════════════════════════════════════════════
+   ACCENT COLORS (default: blue)
+   ════════════════════════════════════════════ */
+
+:root,
+[data-tng-accent="blue"] {
   --ui-primary: #2563eb;
   --ui-primary-hover: #1d4ed8;
+  --ui-primary-active: #1e40af;
+  --ui-primary-soft: #dbeafe;
+  --ui-primary-soft-hover: #bfdbfe;
+  --ui-primary-text: #1d4ed8;
   --ui-on-primary: #ffffff;
-
-  --ui-border: #e5e7eb;
-  --ui-text: #111827;
-  --ui-bg: #ffffff;
+  --ui-ring: rgba(37, 99, 235, 0.35);
 }
+
+[data-tng-accent="purple"] {
+  --ui-primary: #7c3aed;
+  --ui-primary-hover: #6d28d9;
+  --ui-primary-active: #5b21b6;
+  --ui-primary-soft: #ede9fe;
+  --ui-primary-soft-hover: #ddd6fe;
+  --ui-primary-text: #6d28d9;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(124, 58, 237, 0.35);
+}
+
+[data-tng-accent="red"] {
+  --ui-primary: #dc2626;
+  --ui-primary-hover: #b91c1c;
+  --ui-primary-active: #991b1b;
+  --ui-primary-soft: #fee2e2;
+  --ui-primary-soft-hover: #fecaca;
+  --ui-primary-text: #b91c1c;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(220, 38, 38, 0.35);
+}
+
+[data-tng-accent="green"] {
+  --ui-primary: #16a34a;
+  --ui-primary-hover: #15803d;
+  --ui-primary-active: #166534;
+  --ui-primary-soft: #dcfce7;
+  --ui-primary-soft-hover: #bbf7d0;
+  --ui-primary-text: #15803d;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(22, 163, 74, 0.35);
+}
+
+[data-tng-accent="orange"] {
+  --ui-primary: #ea580c;
+  --ui-primary-hover: #c2410c;
+  --ui-primary-active: #9a3412;
+  --ui-primary-soft: #ffedd5;
+  --ui-primary-soft-hover: #fed7aa;
+  --ui-primary-text: #c2410c;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(234, 88, 12, 0.35);
+}
+
+[data-tng-accent="pink"] {
+  --ui-primary: #db2777;
+  --ui-primary-hover: #be185d;
+  --ui-primary-active: #9d174d;
+  --ui-primary-soft: #fce7f3;
+  --ui-primary-soft-hover: #fbcfe8;
+  --ui-primary-text: #be185d;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(219, 39, 119, 0.35);
+}
+
+[data-tng-accent="teal"] {
+  --ui-primary: #0d9488;
+  --ui-primary-hover: #0f766e;
+  --ui-primary-active: #115e59;
+  --ui-primary-soft: #ccfbf1;
+  --ui-primary-soft-hover: #99f6e4;
+  --ui-primary-text: #0f766e;
+  --ui-on-primary: #ffffff;
+  --ui-ring: rgba(13, 148, 136, 0.35);
+}
+
+/* ════════════════════════════════════════════
+   LIGHT THEME (default)
+   ════════════════════════════════════════════ */
+
+:root,
+[data-tng-theme="light"] {
+  color-scheme: light;
+  --ui-bg: #ffffff;
+  --ui-bg-subtle: #f9fafb;
+  --ui-bg-muted: #f3f4f6;
+  --ui-bg-elevated: #ffffff;
+  --ui-text: #111827;
+  --ui-text-muted: #6b7280;
+  --ui-text-subtle: #9ca3af;
+  --ui-border: #e5e7eb;
+  --ui-border-hover: #d1d5db;
+  --ui-border-strong: #9ca3af;
+  --ui-input-bg: #ffffff;
+  --ui-input-border: #d1d5db;
+  --ui-overlay: rgba(0, 0, 0, 0.5);
+  --ui-success: #16a34a;
+  --ui-success-soft: #dcfce7;
+  --ui-warning: #d97706;
+  --ui-warning-soft: #fef3c7;
+  --ui-danger: #dc2626;
+  --ui-danger-soft: #fee2e2;
+  --ui-info: #2563eb;
+  --ui-info-soft: #dbeafe;
+}
+
+/* ════════════════════════════════════════════
+   DARK THEME
+   ════════════════════════════════════════════ */
+
+[data-tng-theme="dark"] {
+  color-scheme: dark;
+  --ui-bg: #09090b;
+  --ui-bg-subtle: #18181b;
+  --ui-bg-muted: #27272a;
+  --ui-bg-elevated: #18181b;
+  --ui-text: #fafafa;
+  --ui-text-muted: #a1a1aa;
+  --ui-text-subtle: #71717a;
+  --ui-border: #27272a;
+  --ui-border-hover: #3f3f46;
+  --ui-border-strong: #52525b;
+  --ui-input-bg: #18181b;
+  --ui-input-border: #3f3f46;
+  --ui-overlay: rgba(0, 0, 0, 0.7);
+  --ui-success: #22c55e;
+  --ui-success-soft: rgba(34, 197, 94, 0.15);
+  --ui-warning: #eab308;
+  --ui-warning-soft: rgba(234, 179, 8, 0.15);
+  --ui-danger: #ef4444;
+  --ui-danger-soft: rgba(239, 68, 68, 0.15);
+  --ui-info: #3b82f6;
+  --ui-info-soft: rgba(59, 130, 246, 0.15);
+
+  --ui-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ui-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ui-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --ui-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+  --ui-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark accent overrides for better contrast */
+[data-tng-theme="dark"][data-tng-accent="blue"],
+[data-tng-theme="dark"] [data-tng-accent="blue"],
+[data-tng-theme="dark"]:not([data-tng-accent]) {
+  --ui-primary: #3b82f6;
+  --ui-primary-hover: #2563eb;
+  --ui-primary-active: #1d4ed8;
+  --ui-primary-soft: rgba(59, 130, 246, 0.15);
+  --ui-primary-soft-hover: rgba(59, 130, 246, 0.25);
+  --ui-primary-text: #60a5fa;
+  --ui-ring: rgba(59, 130, 246, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="purple"],
+[data-tng-theme="dark"] [data-tng-accent="purple"] {
+  --ui-primary: #8b5cf6;
+  --ui-primary-hover: #7c3aed;
+  --ui-primary-active: #6d28d9;
+  --ui-primary-soft: rgba(139, 92, 246, 0.15);
+  --ui-primary-soft-hover: rgba(139, 92, 246, 0.25);
+  --ui-primary-text: #a78bfa;
+  --ui-ring: rgba(139, 92, 246, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="red"],
+[data-tng-theme="dark"] [data-tng-accent="red"] {
+  --ui-primary: #ef4444;
+  --ui-primary-hover: #dc2626;
+  --ui-primary-active: #b91c1c;
+  --ui-primary-soft: rgba(239, 68, 68, 0.15);
+  --ui-primary-soft-hover: rgba(239, 68, 68, 0.25);
+  --ui-primary-text: #f87171;
+  --ui-ring: rgba(239, 68, 68, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="green"],
+[data-tng-theme="dark"] [data-tng-accent="green"] {
+  --ui-primary: #22c55e;
+  --ui-primary-hover: #16a34a;
+  --ui-primary-active: #15803d;
+  --ui-primary-soft: rgba(34, 197, 94, 0.15);
+  --ui-primary-soft-hover: rgba(34, 197, 94, 0.25);
+  --ui-primary-text: #4ade80;
+  --ui-ring: rgba(34, 197, 94, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="orange"],
+[data-tng-theme="dark"] [data-tng-accent="orange"] {
+  --ui-primary: #f97316;
+  --ui-primary-hover: #ea580c;
+  --ui-primary-active: #c2410c;
+  --ui-primary-soft: rgba(249, 115, 22, 0.15);
+  --ui-primary-soft-hover: rgba(249, 115, 22, 0.25);
+  --ui-primary-text: #fb923c;
+  --ui-ring: rgba(249, 115, 22, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="pink"],
+[data-tng-theme="dark"] [data-tng-accent="pink"] {
+  --ui-primary: #ec4899;
+  --ui-primary-hover: #db2777;
+  --ui-primary-active: #be185d;
+  --ui-primary-soft: rgba(236, 72, 153, 0.15);
+  --ui-primary-soft-hover: rgba(236, 72, 153, 0.25);
+  --ui-primary-text: #f472b6;
+  --ui-ring: rgba(236, 72, 153, 0.4);
+}
+
+[data-tng-theme="dark"][data-tng-accent="teal"],
+[data-tng-theme="dark"] [data-tng-accent="teal"] {
+  --ui-primary: #14b8a6;
+  --ui-primary-hover: #0d9488;
+  --ui-primary-active: #0f766e;
+  --ui-primary-soft: rgba(20, 184, 166, 0.15);
+  --ui-primary-soft-hover: rgba(20, 184, 166, 0.25);
+  --ui-primary-text: #2dd4bf;
+  --ui-ring: rgba(20, 184, 166, 0.4);
+}
+
+/* ════════════════════════════════════════════
+   BASE RESET
+   ════════════════════════════════════════════ */
 
 .tng-root {
   font-family: var(--ui-font);
+  color: var(--ui-text);
+  background-color: var(--ui-bg);
+  line-height: var(--ui-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tng-root *,
+.tng-root *::before,
+.tng-root *::after {
+  box-sizing: border-box;
 }

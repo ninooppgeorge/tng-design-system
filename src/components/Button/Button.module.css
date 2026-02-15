@@ -1,22 +1,124 @@
 .button {
   font-family: var(--ui-font);
+  font-weight: 500;
   border-radius: var(--ui-radius-md);
-  padding: var(--ui-space-2) var(--ui-space-3);
   border: 1px solid transparent;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-2);
+  white-space: nowrap;
+  transition: background var(--ui-duration-fast) var(--ui-ease),
+              color var(--ui-duration-fast) var(--ui-ease),
+              border-color var(--ui-duration-fast) var(--ui-ease),
+              box-shadow var(--ui-duration-fast) var(--ui-ease);
+  position: relative;
+  line-height: var(--ui-leading-tight);
 }
 
-.primary {
+.button:focus-visible {
+  outline: 2px solid var(--ui-primary);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Sizes ── */
+
+.sm {
+  font-size: var(--ui-font-sm);
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  height: 32px;
+}
+
+.md {
+  font-size: var(--ui-font-sm);
+  padding: var(--ui-space-2) var(--ui-space-4);
+  height: 38px;
+}
+
+.lg {
+  font-size: var(--ui-font-md);
+  padding: var(--ui-space-2-5) var(--ui-space-5);
+  height: 44px;
+}
+
+/* ── Icon-only ── */
+
+.iconOnly.sm { width: 32px; padding: 0; }
+.iconOnly.md { width: 38px; padding: 0; }
+.iconOnly.lg { width: 44px; padding: 0; }
+
+/* ── Variants ── */
+
+.solid {
   background: var(--ui-primary);
   color: var(--ui-on-primary);
 }
 
-.primary:hover {
+.solid:hover {
   background: var(--ui-primary-hover);
+}
+
+.solid:active {
+  background: var(--ui-primary-active);
+}
+
+.soft {
+  background: var(--ui-primary-soft);
+  color: var(--ui-primary-text);
+}
+
+.soft:hover {
+  background: var(--ui-primary-soft-hover);
+}
+
+.outline {
+  background: transparent;
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+
+.outline:hover {
+  background: var(--ui-bg-muted);
+  border-color: var(--ui-border-hover);
 }
 
 .ghost {
   background: transparent;
   color: var(--ui-text);
-  border-color: var(--ui-border);
+}
+
+.ghost:hover {
+  background: var(--ui-bg-muted);
+}
+
+/* ── Loading state ── */
+
+.loading {
+  position: relative;
+}
+
+.hiddenContent {
+  visibility: hidden;
+}
+
+.spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--ui-radius-full);
+  animation: button-spin 0.6s linear infinite;
+}
+
+@keyframes button-spin {
+  to { transform: rotate(360deg); }
 }
