@@ -18,7 +18,19 @@ export default defineConfig({
       fileName: format => format === "es" ? "index.js" : "index.cjs"
     },
     rollupOptions: {
-      external: ["react", "react-dom"]
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM"
+        }
+      }
+    },
+    cssCodeSplit: false
+  },
+  resolve: {
+    alias: {
+      '~': new URL('./', import.meta.url).pathname
     }
   },
   test: {
