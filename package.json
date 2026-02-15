@@ -31,6 +31,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./dist/tng-design-system.css": "./dist/tng-design-system.css",
     "./theme.css": "./theme.css"
   },
   "peerDependencies": {
