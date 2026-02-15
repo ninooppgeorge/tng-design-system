@@ -3,13 +3,33 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import fs from 'node:fs';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
+// Custom plugin to combine CSS files after build
+function combineCssPlugin() {
+  return {
+    name: 'combine-css',
+    apply: 'build' as const,
+    writeBundle() {
+      const bundleCssPath = path.join(dirname, 'dist/tng-design-system.css');
+      const combinedPath = path.join(dirname, 'dist/index.css');
+
+      if (fs.existsSync(bundleCssPath)) {
+        const bundleContent = fs.readFileSync(bundleCssPath, 'utf-8');
+        // tng-design-system.css already contains theme.css, so just use it
+        fs.writeFileSync(combinedPath, bundleContent);
+        console.log('✓ Created dist/index.css');
+      }
+    }
+  };
+}
+
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), combineCssPlugin()],
   build: {
     lib: {
       entry: "src/index.ts",
