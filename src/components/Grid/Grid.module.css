@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+}
+
+/* ── Gap ── */
+.gap-sm { gap: var(--ui-space-2); }
+.gap-md { gap: var(--ui-space-4); }
+.gap-lg { gap: var(--ui-space-6); }
+.gap-xl { gap: var(--ui-space-8); }
+
+/* ── Alignment ── */
+.align-start { align-items: start; }
+.align-center { align-items: center; }
+.align-end { align-items: end; }
+.align-stretch { align-items: stretch; }

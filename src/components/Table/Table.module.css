@@ -1,0 +1,54 @@
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  font-family: var(--ui-font);
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ui-font-sm);
+  color: var(--ui-text);
+}
+
+.thead {
+  border-bottom: 1px solid var(--ui-border);
+}
+
+.th {
+  text-align: left;
+  font-weight: 600;
+  padding: var(--ui-space-3) var(--ui-space-4);
+  color: var(--ui-text-muted);
+  font-size: var(--ui-font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.td {
+  padding: var(--ui-space-3) var(--ui-space-4);
+}
+
+.tr {
+  border-bottom: 1px solid var(--ui-border);
+  transition: background var(--ui-duration-fast) var(--ui-ease);
+}
+
+.tbody .tr:last-child {
+  border-bottom: none;
+}
+
+.tbody .tr:hover {
+  background: var(--ui-bg-subtle);
+}
+
+/* ── Striped variant ── */
+
+.striped .tbody .tr:nth-child(even) {
+  background: var(--ui-bg-subtle);
+}
+
+.striped .tbody .tr:nth-child(even):hover {
+  background: var(--ui-bg-muted);
+}

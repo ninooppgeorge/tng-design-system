@@ -1,0 +1,58 @@
+.textarea {
+  font-family: var(--ui-font);
+  width: 100%;
+  border: 1px solid var(--ui-input-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-input-bg);
+  color: var(--ui-text);
+  min-height: 80px;
+  transition: border-color var(--ui-duration-fast) var(--ui-ease),
+              box-shadow var(--ui-duration-fast) var(--ui-ease);
+}
+
+.textarea::placeholder {
+  color: var(--ui-text-subtle);
+}
+
+.textarea:hover {
+  border-color: var(--ui-border-hover);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ui-primary);
+  box-shadow: 0 0 0 3px var(--ui-ring);
+}
+
+.textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Sizes ── */
+
+.sm {
+  font-size: var(--ui-font-sm);
+  padding: var(--ui-space-1-5) var(--ui-space-2);
+}
+
+.md {
+  font-size: var(--ui-font-sm);
+  padding: var(--ui-space-2) var(--ui-space-3);
+}
+
+.lg {
+  font-size: var(--ui-font-md);
+  padding: var(--ui-space-2-5) var(--ui-space-3);
+}
+
+/* ── Error ── */
+
+.error {
+  border-color: var(--ui-danger);
+}
+
+.error:focus {
+  border-color: var(--ui-danger);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
