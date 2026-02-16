@@ -1,0 +1,121 @@
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  font-family: var(--ui-font);
+}
+
+.info {
+  font-size: var(--ui-font-sm);
+  color: var(--ui-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+}
+
+/* ── Base button ── */
+
+.btn {
+  font-family: var(--ui-font);
+  font-weight: 500;
+  background: transparent;
+  color: var(--ui-text);
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  user-select: none;
+  transition:
+    background var(--ui-duration-fast) var(--ui-ease),
+    border-color var(--ui-duration-fast) var(--ui-ease),
+    color var(--ui-duration-fast) var(--ui-ease);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--ui-bg-muted);
+  border-color: var(--ui-border);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ui-ring);
+  outline-offset: 2px;
+}
+
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Active (current) page */
+
+.btn.active {
+  background: var(--ui-primary);
+  color: var(--ui-on-primary);
+  border-color: var(--ui-primary);
+  cursor: default;
+}
+
+.btn.active:hover {
+  background: var(--ui-primary-hover);
+  border-color: var(--ui-primary-hover);
+}
+
+/* Ellipsis */
+
+.dots {
+  color: var(--ui-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* ── Sizes ── */
+
+.sm .btn {
+  font-size: var(--ui-font-xs);
+  min-width: 28px;
+  height: 28px;
+  padding: 0 var(--ui-space-1-5);
+}
+
+.sm .dots {
+  font-size: var(--ui-font-xs);
+  min-width: 20px;
+  height: 28px;
+}
+
+.md .btn {
+  font-size: var(--ui-font-sm);
+  min-width: 34px;
+  height: 34px;
+  padding: 0 var(--ui-space-2);
+}
+
+.md .dots {
+  font-size: var(--ui-font-sm);
+  min-width: 24px;
+  height: 34px;
+}
+
+.lg .btn {
+  font-size: var(--ui-font-md);
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--ui-space-2-5);
+}
+
+.lg .dots {
+  font-size: var(--ui-font-md);
+  min-width: 28px;
+  height: 40px;
+}
