@@ -1,5 +1,11 @@
 # @ninoop/tng-design-system
 
+## 0.2.5
+
+### Patch Changes
+
+- 840df65: added pagination and advanced tables
+
 ## 0.2.4
 
 ### Patch Changes
