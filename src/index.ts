@@ -16,3 +16,5 @@ export * from "./components/Dialog";
 export * from "./components/Spinner";
 export * from "./components/Tabs";
 export * from "./components/Tooltip";
+export * from "./components/Pagination";
+export * from "./components/AdvancedTable";
